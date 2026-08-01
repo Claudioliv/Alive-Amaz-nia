@@ -4,7 +4,7 @@ Landing page imersiva sobre a Floresta Amazônica, construída como projeto de e
 
 > 🔗 **Page:** https://alive-amaz-nia.vercel.app/
 
-![Página].(screenshots/page.png)
+![Hero do Alive Amazônia](screenshots/page.png)
 
 ## Sobre o projeto
 
@@ -12,8 +12,8 @@ O Alive Amazônia é uma experiência de rolagem única (single-page), contando 
 
 ## Tecnologias
 
-- [Next.js 15](https://nextjs.org/)** (App Router)
-- TypeScript**
+- [Next.js 15] (App Router)
+- TypeScript
 - Tailwind CSS v4 — tokens de design customizados (paleta inspirada na floresta)
 - [Framer Motion] — animações, scroll-driven effects, `useScroll`/`useTransform`, `AnimatePresence`
 - [Lenis] — smooth scroll
