@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Alive Amazônia
 
-## Getting Started
+Landing page imersiva sobre a Floresta Amazônica, construída como projeto de estudo e portfólio, com foco em animação frontend: scroll storytelling, micro-interações e performance.
 
-First, run the development server:
+🔗 Page: [link da Vercel aqui após o deploy]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Sobre o projeto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O Alive Amazônia é uma experiência de rolagem única (single-page), contando a história da maior floresta tropical do planeta através de números, fauna, curiosidades e um chamado à conservação — tudo guiado por animações sincronizadas ao scroll.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Tecnologias
+Next.js 15 (App Router)
+TypeScript
+Tailwind CSS v4 — tokens de design customizados (paleta inspirada na floresta)
+Framer Motion — animações, scroll-driven effects, useScroll/useTransform, AnimatePresence
+Lenis — smooth scroll
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+Funcionalidades
+Hero com título animado em cascata (stagger) e parallax de fundo
+Smooth scroll customizado (Lenis), com fallback automático para quem prefere menos movimento
+Contadores numéricos animados por scroll (dados reais sobre a Amazônia)
+Seção de fauna com scrollytelling: cada animal revela-se em tela cheia conforme o scroll avança
+Linha do tempo histórica (povos originários ao presente), com quadro animado e fotos
+Seção dos três rios mais icônicos da bacia amazônica
+Curiosidades em carrossel de scroll horizontal, com imagens
+Comparador interativo "antes/depois" (floresta preservada vs. área desmatada), com dado real de desmatamento
+Seção de encerramento com chamada à conservação
+Botão de voltar ao topo, com animação flutuante, visível só perto do fim da página
+Acessibilidade de movimento: respeita prefers-reduced-motion tanto nas animações do Framer Motion quanto no smooth scroll
+Todas as animações usam propriedades performáticas (opacity, transform, filter), evitando reflow
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Estrutura do projeto
+app/
+├── page.tsx                    # Composição das seções da página
+├── layout.tsx                  # Fontes, MotionConfig, SmoothScroll, ScrollToTop
+├── globals.css                 # Paleta de cores e tipografia (tokens)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+components/
+├── Hero.tsx                    # Título em cascata + parallax
+├── SmoothScroll.tsx            # Wrapper do Lenis, com fallback de acessibilidade
+├── StatsSection.tsx            # Seção de números
+├── StatCounter.tsx             # Contador animado individual (parsing de número BR)
+├── FaunaSection.tsx            # Scrollytelling da fauna (tela cheia por animal)
+├── HistorySection.tsx          # Linha do tempo histórica (quadro animado + timeline)
+├── RiversSection.tsx           # Os três rios mais icônicos da Amazônia
+├── CuriositiesSection.tsx      # Scroll horizontal de curiosidades
+├── BeforeAfterSection.tsx      # Comparador interativo (clip-path)
+├── ClosingSection.tsx          # Encerramento 
+└── ScrollToTop.tsx             # Botão de retorno ao topo, visível perto do fim
 
-## Deploy on Vercel
+lib/
+└── content.ts                  # Dados: estatísticas, animais, história, rios, curiosidades
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Sobre o desenvolvimento
+Este projeto foi construído em fases, cada uma introduzindo um conceito de animação: fundamentos do Framer Motion, scroll-driven effects, contadores numéricos, AnimatePresence, transições com clip-path, e por fim performance e acessibilidade de movimento. 
